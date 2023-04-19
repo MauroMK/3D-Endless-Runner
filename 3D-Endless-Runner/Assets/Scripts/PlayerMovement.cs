@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 3f;
-    private float jumpForce = 8f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
     private Rigidbody playerRb;
 
     private void Start() 
@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();    
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
